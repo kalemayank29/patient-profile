@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.blinktech.patientprofile" >
+
+    <meta-data android:name="android.app.default_searchable" android:value=".SearchPatient"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden" >
+            <meta-data android:name="android.app.default_searchable"
+                android:value="io.blinktech.patientprofile.SearchPatient" />
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AddPatient"
+            android:label="@string/title_activity_add_patient"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".SearchPatient"
+            android:label="@string/title_activity_search_patient"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+        </activity>
+    </application>
+
+</manifest>
